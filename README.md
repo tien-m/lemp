@@ -12,15 +12,20 @@ sudo pip install docker-compose
 
 ### How to use
 
-Start
+Up
 ```
 docker-compose up -d
 ```
 
-Stop
+Down
 
 ```
-docker-compose stop
+docker-compose down
+```
+View Logs
+
+```
+docker logs lemp_nginx
 ```
 
 ## License
