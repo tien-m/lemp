@@ -29,7 +29,7 @@ docker-compose stop
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://gist.github.com/alx-7/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
@@ -37,7 +37,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Alx-7** - *Initial work* - [Alx-7](https://github.com/alx-7)
+* **Alx-7** - *Initial work* - [alx-7](https://github.com/alx-7)
 
 See also the list of [contributors](https://github.com/alx-7/project/contributors) who participated in this project.
 
