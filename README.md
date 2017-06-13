@@ -31,10 +31,6 @@ docker-compose stop
 
 Please read [CONTRIBUTING.md](https://gist.github.com/alx-7/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
 * **Alx-7** - *Initial work* - [alx-7](https://github.com/alx-7)
