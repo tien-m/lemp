@@ -1,0 +1,1 @@
+/usr/share/adminer/latest.php
