@@ -1,10 +1,6 @@
-# Docker Lemp stack
-
-Docker composer lemp stack include php custom extensions
-
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Docker composer lemp stack include php custom extensions
 
 ### Prerequisites
 
@@ -26,16 +22,6 @@ Stop
 ```
 docker-compose stop
 ```
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/alx-7/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Authors
-
-* **Alx-7** - *Initial work* - [alx-7](https://github.com/alx-7)
-
-See also the list of [contributors](https://github.com/alx-7/project/contributors) who participated in this project.
 
 ## License
 
