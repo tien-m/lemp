@@ -1,6 +1,5 @@
 version: '2'
 services:
-
   data:
    image: busybox:latest
    entrypoint: tail -f /dev/null

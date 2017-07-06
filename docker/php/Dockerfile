@@ -2,6 +2,7 @@ FROM php:7.1-fpm
 
 # Install modules
 RUN apt-get update && apt-get install -y \
+	wget \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
@@ -19,6 +20,10 @@ RUN pecl install -o -f xdebug \
 COPY ./php.ini /usr/local/etc/php/
 COPY ./www.conf /usr/local/etc/php/
 
+RUN  wget -O /usr/local/bin/drush http://files.drush.org/drush.phar 
+RUN  chmod +x /usr/local/bin/drush 
+      
+
 RUN apt-get purge -y g++ \
     && apt-get autoremove -y \
     && rm -r /var/lib/apt/lists/* \
@@ -28,3 +33,4 @@ RUN usermod -u 1000 www-data
 
 EXPOSE 9000
 CMD ["php-fpm"]
+
