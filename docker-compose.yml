@@ -34,13 +34,15 @@ services:
     ports:
       - 9000:9000 
   db:
-    image: mysql:5.7
+    image: mysql:latest
     container_name: lemp_mariadb
-    restart: always
     volumes:
       - db-data:/var/lib/mysql
+    restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=ids_123
+        MYSQL_USER=ids
+        MYSQL_PASSWORD=ids_123
     ports:
       - 3306:3306 
 volumes:
