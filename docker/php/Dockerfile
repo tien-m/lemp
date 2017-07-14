@@ -3,6 +3,7 @@ FROM php:7.1-fpm
 # Install modules
 RUN apt-get update && apt-get install -y \
 	wget \
+        git \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
@@ -20,9 +21,23 @@ RUN pecl install -o -f xdebug \
 COPY ./php.ini /usr/local/etc/php/
 COPY ./www.conf /usr/local/etc/php/
 
-RUN  wget -O /usr/local/bin/drush http://files.drush.org/drush.phar 
-RUN  chmod +x /usr/local/bin/drush 
-      
+#RUN  wget -O /usr/local/bin/drush http://files.drush.org/drush.phar 
+#RUN  chmod +x /usr/local/bin/drush 
+
+ # Install Composer.
+RUN curl -sS https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/local/bin/composer
+RUN ln -s /root/.composer/vendor/bin/drush /usr/local/bin/drush
+# Install Drush.
+RUN composer global require drush/drush:dev-master
+RUN composer global update     
+
+
+# Install Drupal Console
+RUN curl https://drupalconsole.com/installer -L -o drupal.phar \
+ && mv drupal.phar /usr/local/bin/drupal \
+ && chmod +x /usr/local/bin/drupal \
+ && drupal init --override
 
 RUN apt-get purge -y g++ \
     && apt-get autoremove -y \
