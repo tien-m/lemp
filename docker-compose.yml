@@ -40,9 +40,9 @@ services:
     restart: always
     command: mysqld --max_allowed_packet=1024M
     environment:
-        MYSQL_ROOT_PASSWORD: ids_123
-        MYSQL_USER: ids_123
-        MYSQL_PASSWORD: ids_123
+        MYSQL_ROOT_PASSWORD: root@123
+        MYSQL_USER: root
+        MYSQL_PASSWORD: root@123
     volumes:
         - './.data/mysql:/var/lib/mysql'
     ports:
