@@ -21,9 +21,6 @@ RUN pecl install -o -f xdebug \
 COPY ./php.ini /usr/local/etc/php/
 COPY ./www.conf /usr/local/etc/php/
 
-#RUN  wget -O /usr/local/bin/drush http://files.drush.org/drush.phar 
-#RUN  chmod +x /usr/local/bin/drush 
-
  # Install Composer.
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
