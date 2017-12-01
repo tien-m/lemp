@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
         libmcrypt-dev \
         libpng12-dev \
         libicu-dev \
+	libssl-dev \
             --no-install-recommends
 
 RUN docker-php-ext-install mcrypt bcmath zip intl mbstring pdo_mysql exif \
@@ -21,9 +22,32 @@ RUN pecl install -o -f xdebug \
 COPY ./php.ini /usr/local/etc/php/
 COPY ./www.conf /usr/local/etc/php/
 
+#RUN  wget -O /usr/local/bin/drush http://files.drush.org/drush.phar 
+#RUN  chmod +x /usr/local/bin/drush 
+
  # Install Composer.
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
+
+ # install mcrypt for xhgui
+ RUN apt-get install -y mcrypt 
+
+ # install pkg-config for pecl
+ RUN apt-get install -y pkg-config
+
+ # install Tideways profiler extension
+ RUN git clone https://github.com/tideways/php-profiler-extension.git
+ RUN cd php-profiler-extension && phpize && ./configure && make && make install
+
+ # install mongodb extension for xhgui
+ RUN pecl install mongodb
+
+ # install xhgui
+ RUN git clone https://github.com/perftools/xhgui.git /xhgui
+
+
+ # init container by running installation of composer for xhgui and staring fpm 
+ CMD composer install -d /xhgui && fpm-start
 
 RUN apt-get purge -y g++ \
     && apt-get autoremove -y \
