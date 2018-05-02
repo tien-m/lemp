@@ -19,10 +19,6 @@ services:
     ports:
       - 80:80
       - 443:443
-  xhgui:  # xhgui image described as service
-    image: cv21/xhgui
-    ports: 
-      - 8083:80 # mount xhgui on port 8083
   php:
     build: docker/php
     container_name: lemp_php
